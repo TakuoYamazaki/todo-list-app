@@ -1,9 +1,12 @@
+import React from "react";
+import 'tailwindcss/tailwind.css';
+
 export const Footer = () => {
   return (
-    <footer class="bg-slate-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="py-4 text-center">
-            <p class="text-white text-sm">Todoアプリ</p>
+    <footer className="bg-slate-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="py-4 text-center">
+            <p className="text-white text-sm">Todoアプリ</p>
         </div>
       </div>
     </footer>
