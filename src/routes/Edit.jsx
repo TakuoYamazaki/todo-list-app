@@ -18,7 +18,8 @@ export const Edit = () => {
         try{
             //axiosを使用してPUTリクエストを送信
             const response = await axios.put(`${apiUrl}/${id}`, { task_name: taskName, });
-            setResponse(response.data); // レスポンスを受け取る
+            // レスポンスを受け取る
+            setResponse(response.data); 
             navigate('/');
         } catch (error) {
             console.error('データ更新エラー', error);
