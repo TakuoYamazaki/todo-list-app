@@ -5,10 +5,11 @@ import 'tailwindcss/tailwind.css';
 function CreateTask() {
   const [task_name, setTaskName] = useState('');
   const [response, setResponse] = useState(null);
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   const addTodo = async () => {
     try {
-      const response = await axios.post('http://localhost:8000/api/tasks', { task_name });
+      const response = await axios.post(`${apiUrl}`, { task_name });
       setTaskName(''); // フォームをクリア
       setResponse(response.data); // レスポンスを受け取る
       window.location.reload();
