@@ -16,7 +16,7 @@ export const Top = () => {
 
     const fetchTasks = async () => {
         try {
-          const response = await axios.get(`${apiUrl}/api/tasks`);
+          const response = await axios.get(`${apiUrl}`);
           setTasks(response.data);
         } catch (error) {
           console.error('Tasksの取得エラー:', error);
@@ -25,7 +25,7 @@ export const Top = () => {
 
     const deleteTask = async (taskId) => {
         try {
-            await axios.delete(`${apiUrl}/${taskId}`);
+            await axios.delete(`${apiUrl}${taskId}`);
         } catch (error) {
             console.error('Taskの削除エラー:', error);
         }
@@ -33,7 +33,7 @@ export const Top = () => {
 
     const completeTask = async (taskId) => {
         try{
-            await axios.put(`${apiUrl}/${taskId}/complete`);
+            await axios.put(`${apiUrl}${taskId}/complete`);
         } catch (error) {
             console.log('Taskの完了エラー');
         }
@@ -68,7 +68,8 @@ export const Top = () => {
                                         </thead>
                                         <tbody className="divide-y divide-gray-200 bg-white">
                                                 {tasks.map((task) => (
-                                                    <TaskRow key={task.id} task={task} onPut={() => completeTask(task.id)} onDelete={() => deleteTask(task.id)} />
+                                                    <TaskRow key={task.id} task={task} onPut={() => completeTask(task.id)} 
+                                                    onDelete={() => deleteTask(task.id)} />
                                                 ))}
                                         </tbody>
                                     </table>

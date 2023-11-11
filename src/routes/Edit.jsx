@@ -17,7 +17,7 @@ export const Edit = () => {
 
         try{
             //axiosを使用してPUTリクエストを送信
-            const response = await axios.put(`${apiUrl}/${id}`, { task_name: taskName, });
+            const response = await axios.put(`${apiUrl}${id}`, { task_name: taskName, });
             // レスポンスを受け取る
             setResponse(response.data); 
             navigate('/');

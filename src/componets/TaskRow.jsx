@@ -16,7 +16,7 @@ function TaskRow({ task, onDelete, onPut}) {
               role="menuitem"
               tabIndex="-1"
             >
-              <input type="hidden" name="status" value={task.status} />
+              <input type="hidden" name="id" value={task.id} />
               <button
                 type="submit"
                 className="bg-emerald-700 py-4 w-20 text-white md:hover:bg-emerald-800 transition-colors"
@@ -41,6 +41,7 @@ function TaskRow({ task, onDelete, onPut}) {
               role="menuitem"
               tabIndex="-1"
             >
+              {/* <input type="hidden" name="id" value={task.id} /> */}
               <button
                 type="submit"
                 className="py-4 w-20 md:hover:bg-slate-200 transition-colors"
